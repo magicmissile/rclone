@@ -267,8 +267,11 @@ A complete UNC path, such as |\\cloud\remote|, optionally with path
 string will be used as the share part, after a default prefix |\\server\|.
 If no volume name is specified then |\\server\share| will be used.
 You must make sure the volume name is unique when you are mounting more than one drive,
-or else the mount command will fail. The share name will treated as the volume label for
-the mapped drive, shown in Windows Explorer etc, while the complete
+or else the mount command will fail. The volume name must be unique among all of the 
+users that are currently mounting rclone volums, not just your user.  If you have 
+issues with multiple users, consider adding the username or another unique string,
+such as date/time, to the volume name.  The share name will treated as the volume 
+label for the mapped drive, shown in Windows Explorer etc, while the complete
 |\\server\share| will be reported as the remote UNC path by
 |net use| etc, just like a normal network drive mapping.
 
